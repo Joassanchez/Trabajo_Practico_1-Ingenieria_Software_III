@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
+
 function Menu() {
     const navigate = useNavigate();
 
@@ -23,7 +24,7 @@ function Menu() {
 
     // const token = sessionStorage.getItem('token')
     if (token !== "" && token !== null) {
-        var Decoded = jwt_decode(token);
+        var Decoded = jwtDecode(token);
         if (Decoded.nombreROL === 1) {
             return (
                 <>

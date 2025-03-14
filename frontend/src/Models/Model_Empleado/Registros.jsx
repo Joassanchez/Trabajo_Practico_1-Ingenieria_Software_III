@@ -4,7 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Form } from 'react-bootstrap';
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
+
 
 export class Registros extends Component {
 
@@ -416,7 +417,7 @@ export class Registros extends Component {
 
     render() {
 
-        var Decoded = jwt_decode(sessionStorage.getItem('token'));
+        var Decoded = jwtDecode(sessionStorage.getItem('token'));
         const nombreROL = Decoded.nombreROL
 
         return (

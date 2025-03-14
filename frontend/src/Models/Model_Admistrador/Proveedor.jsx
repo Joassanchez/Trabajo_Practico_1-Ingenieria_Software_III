@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
+
 import { TrashFill, Pencil } from 'react-bootstrap-icons';
 
 
@@ -144,7 +145,7 @@ export class Proveedor extends Component {
 
     render() {
 
-        var tokenDecoded = jwt_decode(sessionStorage.getItem('token'));
+        var tokenDecoded = jwtDecode(sessionStorage.getItem('token'));
         const rol = tokenDecoded.rol;
         const filas = this.state.Proveedores.map((Proveedor, index) => {
             return (

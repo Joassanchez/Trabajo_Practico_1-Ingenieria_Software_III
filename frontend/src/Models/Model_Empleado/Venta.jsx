@@ -4,7 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
+
 
 
 export class Venta extends Component {
@@ -267,7 +268,7 @@ export class Venta extends Component {
 
     handleClickCargarVenta() {
         
-        var tokenDecoded = jwt_decode(sessionStorage.getItem('token'));
+        var tokenDecoded = jwtDecode(sessionStorage.getItem('token'));
         const idEmpleado = tokenDecoded.usuarioID;
         let { metodoDePagoSeleccionado } = this.state;
 
@@ -398,7 +399,7 @@ export class Venta extends Component {
 
     render() {
 
-        var tokenDecoded = jwt_decode(sessionStorage.getItem('token'));
+        var tokenDecoded = jwtDecode(sessionStorage.getItem('token'));
         const nombreEmpleado = tokenDecoded.nickname;
         const statusVenta = this.state.statusVenta;
         const numeroVenta = this.state.nuevaVenta;

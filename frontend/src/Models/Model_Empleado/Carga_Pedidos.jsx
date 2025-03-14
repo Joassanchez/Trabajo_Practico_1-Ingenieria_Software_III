@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 
 export class Carga_Pedidos extends Component {
@@ -230,7 +230,7 @@ export class Carga_Pedidos extends Component {
 
     handleClickCargarVenta() {
         
-        var tokenDecoded = jwt_decode(sessionStorage.getItem('token'));
+        var tokenDecoded = jwtDecode(sessionStorage.getItem('token'));
         const idEmpleado = tokenDecoded.usuarioID;
 
         const detalles_Enviar = this.state.detalles_Enviar;
@@ -360,7 +360,7 @@ export class Carga_Pedidos extends Component {
 
     render() {
 
-        var tokenDecoded = jwt_decode(sessionStorage.getItem('token'));
+        var tokenDecoded = jwtDecode(sessionStorage.getItem('token'));
         const nombreEmpleado = tokenDecoded.nickname;
         const statusVenta = this.state.statusVenta;
         const numeroVenta = this.state.nuevaVenta;

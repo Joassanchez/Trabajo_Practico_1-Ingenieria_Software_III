@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom"; // Eliminar BrowserRouter de aquí
 import Menu from './Models/Menu';
 import Empleados from './Models/Model_Admistrador/Empleados';
 import Empleados_Edit from './Models/Model_Admistrador/Empleados_Edit';
@@ -14,9 +14,8 @@ import Venta from './Models/Model_Empleado/Venta';
 function App() {
   return (
     <>
-
       <Menu />
-      <ToastContainer/>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<LoginWrapper />} />
         <Route path="/Empleados" element={<Empleados />} />
@@ -25,9 +24,9 @@ function App() {
         <Route path="/proveedor" element={<Proveedor />} />
         <Route path="/proveedor/Edit" element={<Proveedor_Edit />} />
         <Route path="/proveedor/Edit/:Id_proveedor" element={<Proveedor_Edit />} />
-        <Route path="/Registros" element={<Registros/>} />
+        <Route path="/Registros" element={<Registros />} />
         <Route path="/login" element={<Navigate to="/" />} />
-        <Route path="/Venta" element={<Venta/>} />
+        <Route path="/Venta" element={<Venta />} />
       </Routes>
     </>
   );
