@@ -1,0 +1,14 @@
+{
+    "server": {
+      "port": 3001
+    },
+    "database": {
+      "host": "localhost",
+      "user": "root",
+      "password": "1234",
+      "name": "IceCreamCopos",
+      "dialect": "mysql" 
+    },
+    "jwtSecret": "tu-secreto-jwt"
+  }
+  
